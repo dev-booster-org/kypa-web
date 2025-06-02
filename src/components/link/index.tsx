@@ -1,7 +1,7 @@
-import type { HTMLAttributes, ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import { tv, type VariantProps } from 'tailwind-variants'
 
-const buttonVariants = tv({
+const tailwindVariants = tv({
   base: 'rounded px-4 py-2 cursor-pointer transition-all flex items-center gap-2',
   variants: {
     variant: {
@@ -14,22 +14,22 @@ const buttonVariants = tv({
   },
 })
 
-type ButtonVariants = VariantProps<typeof buttonVariants>
+type LinkVariants = VariantProps<typeof tailwindVariants>
 
-interface ButtonProps
-  extends ButtonVariants,
-    HTMLAttributes<HTMLButtonElement> {
+interface LinkProps extends LinkVariants {
   children: ReactNode
+  href: string
 }
 
-export function Button({
-  variant = 'primary',
-  children,
-  ...rest
-}: ButtonProps) {
+export function Link({ children, href, variant = 'primary' }: LinkProps) {
   return (
-    <button className={buttonVariants({ variant })} {...rest}>
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={tailwindVariants({ variant })}
+    >
       {children}
-    </button>
+    </a>
   )
 }
