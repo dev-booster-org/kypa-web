@@ -1,0 +1,26 @@
+import type { HTMLAttributes, ReactNode } from 'react'
+import { tv, type VariantProps } from 'tailwind-variants'
+
+const buttonVariants = tv({
+  base: 'rounded px-4 py-2 cursor-pointer transition-all',
+  variants: {
+    variant: {
+      primary: 'bg-blue-500 text-white hover:bg-blue-600',
+      ghost: 'bg-transparent text-black hover:bg-gray-100',
+      outline:
+        'bg-transparent text-black border border-gray-300 hover:bg-gray-100',
+    },
+  },
+})
+
+type ButtonVariants = VariantProps<typeof buttonVariants>
+
+interface ButtonProps
+  extends ButtonVariants,
+    HTMLAttributes<HTMLButtonElement> {
+  children: ReactNode
+}
+
+export function Button({ variant = 'primary', children }: ButtonProps) {
+  return <button className={buttonVariants({ variant })}>{children}</button>
+}

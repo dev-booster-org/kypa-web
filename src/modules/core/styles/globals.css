@@ -1,1 +1,21 @@
 @import 'tailwindcss';
+
+:root {
+  --gradient-light: linear-gradient(135deg, #f5f7fa 0%, #c5e2f8 100%);
+  --gradient-dark: linear-gradient(135deg, #2d2f31 0%, #1a1c1e 100%);
+  --color-primary-light: #020202;
+  --color-primary-dark: #ffffff;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--gradient-light);
+  color: var(--color-primary-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--gradient-dark);
+    color: var(--color-primary-dark);
+  }
+}
