@@ -1,4 +1,6 @@
-@import 'tailwindcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --gradient-light: linear-gradient(135deg, #f5f7fa 0%, #c5e2f8 100%);
@@ -13,9 +15,7 @@ body {
   color: var(--color-primary-light);
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background: var(--gradient-dark);
-    color: var(--color-primary-dark);
-  }
+.dark body {
+  background: var(--gradient-dark);
+  color: var(--color-primary-dark);
 }

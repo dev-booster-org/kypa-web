@@ -7,8 +7,12 @@ import { router } from '@/modules/core/router'
 
 import '@/modules/core/styles/globals.css'
 
+import { ThemeProvider } from '@/modules/core/providers/theme-provider'
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </StrictMode>,
 )

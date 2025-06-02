@@ -3,12 +3,15 @@ import { Shield, Lock, Users, Smartphone } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
 import kypaDarkLogo from '@/assets/kypa_dark_logo.svg'
+import kypaLightLogo from '@/assets/kypa_light_logo.svg'
 
 import { Button } from '@/components'
 import { Card } from '@/pages/home/components/card'
+import { useTheme } from '@/modules/core/providers/theme-provider'
 
 export function Home() {
   const { t } = useTranslation()
+  const { theme } = useTheme()
 
   const cards = useMemo(() => {
     return [
@@ -38,7 +41,11 @@ export function Home() {
   return (
     <div className="flex flex-col items-center gap-8 p-4">
       <section className="flex flex-col items-center justify-center gap-8">
-        <img src={kypaDarkLogo} alt="Kypa" className="w-[250px]" />
+        <img
+          src={theme === 'light' ? kypaDarkLogo : kypaLightLogo}
+          alt="Kypa"
+          className="w-[250px]"
+        />
         <div className="flex flex-col items-center justify-center gap-2 text-center">
           <span className="font-medium text-xl">{t('home.title')}</span>
           <span className="font-medium text-xl">{t('home.description')}</span>
@@ -57,6 +64,13 @@ export function Home() {
           </Card>
         ))}
       </section>
+      <footer className="flex items-center justify-center gap-2">
+        <span className="text-zinc-600">
+          Densenvolvido por{' '}
+          <a href="https://github.com/jhonesjhonatas">Jhones Jhonatas</a> e{' '}
+          <a href="https://github.com/bruno-oli">Bruno Oliveira</a>
+        </span>
+      </footer>
     </div>
   )
 }
