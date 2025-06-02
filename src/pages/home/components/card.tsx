@@ -6,7 +6,7 @@ interface CardProps {
 
 export function Card({ children }: CardProps) {
   return (
-    <div className="rounded p-4 bg-white shadow flex flex-col gap-4 items-center">
+    <div className="rounded p-4 bg-white shadow flex flex-col gap-4 items-center w-full lg:w-auto text-center">
       {children}
     </div>
   )

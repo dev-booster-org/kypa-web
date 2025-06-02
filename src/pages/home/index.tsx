@@ -1,12 +1,11 @@
+import { useMemo } from 'react'
 import { Shield, Lock, Users, Smartphone } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 import kypaDarkLogo from '@/assets/kypa_dark_logo.svg'
 
 import { Button } from '@/components'
 import { Card } from '@/pages/home/components/card'
-import { useTranslation } from 'react-i18next'
-import { PublicMenu } from '@/components/public-menu'
-import { useMemo } from 'react'
 
 export function Home() {
   const { t } = useTranslation()
@@ -37,11 +36,10 @@ export function Home() {
   }, [t])
 
   return (
-    <main className="w-screen h-screen flex flex-col items-center gap-8">
-      <PublicMenu />
+    <div className="flex flex-col items-center gap-8 p-4">
       <section className="flex flex-col items-center justify-center gap-8">
         <img src={kypaDarkLogo} alt="Kypa" className="w-[250px]" />
-        <div className="flex flex-col items-center justify-center gap-2">
+        <div className="flex flex-col items-center justify-center gap-2 text-center">
           <span className="font-medium text-xl">{t('home.title')}</span>
           <span className="font-medium text-xl">{t('home.description')}</span>
         </div>
@@ -50,7 +48,7 @@ export function Home() {
         <Button>{t('home.buttons.signIn')}</Button>
         <Button variant="outline">{t('home.buttons.signUp')}</Button>
       </section>
-      <section className="flex items-center gap-2 max-w-[1400px]">
+      <section className="flex items-center gap-2 max-w-[1400px] flex-wrap lg:flex-nowrap">
         {cards.map((card, index) => (
           <Card key={index}>
             {card.icon}
@@ -59,6 +57,6 @@ export function Home() {
           </Card>
         ))}
       </section>
-    </main>
+    </div>
   )
 }
