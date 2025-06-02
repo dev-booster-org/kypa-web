@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { RouterProvider } from 'react-router'
+import '@/modules/core/translations/index'
 
 import { router } from '@/modules/core/router'
 

@@ -1,0 +1,28 @@
+{
+  "home": {
+    "title": "Your passwords, secured and synchronized across all your devices.",
+    "description": "Military-grade encryption meets user-friendly design.",
+    "buttons": {
+      "signIn": "Sign in",
+      "signUp": "Sign up"
+    },
+    "cards": {
+      "card1": {
+        "title": "AES-256 Encryption",
+        "description": "Military-grade encryption protects your passwords with the highest security standards."
+      },
+      "card2": {
+        "title": "AES-256 Encryption",
+        "description": "Military-grade encryption protects your passwords with the highest security standards."
+      },
+      "card3": {
+        "title": "AES-256 Encryption",
+        "description": "Military-grade encryption protects your passwords with the highest security standards."
+      },
+      "card4": {
+        "title": "AES-256 Encryption",
+        "description": "Military-grade encryption protects your passwords with the highest security standards."
+      }
+    }
+  }
+}

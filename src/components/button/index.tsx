@@ -2,7 +2,7 @@ import type { HTMLAttributes, ReactNode } from 'react'
 import { tv, type VariantProps } from 'tailwind-variants'
 
 const buttonVariants = tv({
-  base: 'rounded px-4 py-2 cursor-pointer transition-all',
+  base: 'rounded px-4 py-2 cursor-pointer transition-all flex items-center gap-2',
   variants: {
     variant: {
       primary: 'bg-blue-500 text-white hover:bg-blue-600',
@@ -21,6 +21,14 @@ interface ButtonProps
   children: ReactNode
 }
 
-export function Button({ variant = 'primary', children }: ButtonProps) {
-  return <button className={buttonVariants({ variant })}>{children}</button>
+export function Button({
+  variant = 'primary',
+  children,
+  ...rest
+}: ButtonProps) {
+  return (
+    <button className={buttonVariants({ variant })} {...rest}>
+      {children}
+    </button>
+  )
 }

@@ -1,0 +1,28 @@
+{
+  "home": {
+    "title": "Suas senhas, seguras e sincronizadas em todos os seus dispositivos.",
+    "description": "Criptografia de nível militar com design amigável.",
+    "buttons": {
+      "signIn": "Entrar",
+      "signUp": "Cadastrar"
+    },
+    "cards": {
+      "card1": {
+        "title": "Criptografia AES-256",
+        "description": "Criptografia de nível militar protege suas senhas com os mais altos padrões de segurança."
+      },
+      "card2": {
+        "title": "Criptografia AES-256",
+        "description": "Criptografia de nível militar protege suas senhas com os mais altos padrões de segurança."
+      },
+      "card3": {
+        "title": "Criptografia AES-256",
+        "description": "Criptografia de nível militar protege suas senhas com os mais altos padrões de segurança."
+      },
+      "card4": {
+        "title": "Criptografia AES-256",
+        "description": "Criptografia de nível militar protege suas senhas com os mais altos padrões de segurança."
+      }
+    }
+  }
+}
