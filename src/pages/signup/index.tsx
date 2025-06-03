@@ -1,36 +1,75 @@
-import kypaLightLogo from '@/assets/kypa_light_logo.svg'
-import kypaDarkLogo from '@/assets/kypa_dark_logo.svg'
+import kypaIcon from '@/assets/kypa_icon.svg'
 
-import { useTheme } from '@/modules/core/providers/theme-provider'
+import { Button, Form } from '@/components'
+import { useCallback } from 'react'
+import { NavLink } from 'react-router'
+import { z } from 'zod'
 
-import { Card } from '@/components'
+const formSchema = z.object({
+  name: z.string().min(1, { message: 'Nome é obrigatório' }),
+  email: z.string().email({ message: 'Email inválido' }),
+  password: z.string().min(8, { message: 'Mínimo de 8 caracteres' }),
+  confirmPassword: z.string().min(8, { message: 'Mínimo de 8 caracteres' }),
+  terms: z.boolean().refine((value) => value, {
+    message: 'Obrigatório',
+  }),
+})
+
+type FormData = z.infer<typeof formSchema>
 
 export function SignUp() {
-  const { theme } = useTheme()
+  const handleSubmit = useCallback((data: FormData) => {
+    console.log(data)
+  }, [])
 
   return (
-    <div className="flex flex-col h-screen w-full">
-      <div className="flex flex-col gap-8 max-w-[1400px] mx-auto w-full">
-        <section className="flex flex-col gap-2 items-center">
-          <img
-            src={theme === 'light' ? kypaDarkLogo : kypaLightLogo}
-            alt="Kypa"
-            className="w-[200px]"
+    <div className="flex flex-col h-screen w-full items-center p-4 lg:p-0">
+      <div className="rounded p-4 bg-white shadow flex flex-col gap-4 items-center text-center dark:bg-zinc-700 max-w-[500px]">
+        <img src={kypaIcon} alt="Kypa" className="w-[40px]" />
+        <span className="text-2xl font-bold">Criar Conta</span>
+        <span className="font-medium text-zinc-500 dark:text-zinc-400">
+          Se junte a nossa comunidade e comece a gerenciar suas senhas com
+          segurança!
+        </span>
+
+        <Form
+          formSchema={formSchema}
+          onSubmit={handleSubmit}
+          resetOnSubmit
+          className="flex flex-col gap-4 w-full"
+        >
+          <Form.Input label="Nome" name="name" type="text" placeholder="Nome" />
+          <Form.Input
+            label="Email"
+            name="email"
+            type="email"
+            placeholder="Email"
           />
-          <span className="text-2xl font-bold">Cadastre-se gratuitamente</span>
-          <span className="text-lg font-medium text-zinc-500">
-            Falta muito pouco para você começar a gerenciar suas senhas com
-            segurança!
-          </span>
-        </section>
-        <section className="flex gap-4">
-          <Card>
-            <span>Form</span>
-          </Card>
-          <Card>
-            <span>Image</span>
-          </Card>
-        </section>
+          <Form.Input
+            label="Senha"
+            name="password"
+            type="password"
+            placeholder="Senha"
+          />
+          <Form.Input
+            label="Confirmar Senha"
+            name="confirmPassword"
+            type="password"
+            placeholder="Confirmar Senha"
+          />
+          <Form.Checkbox
+            label="Li e aceito os termos e condições"
+            name="terms"
+          />
+          <Button>Criar Conta</Button>
+        </Form>
+
+        <div className="flex items-center gap-2">
+          <span className="font-medium text-zinc-500">Já tem uma conta?</span>
+          <NavLink to="/sign-in" className="font-medium text-blue-500">
+            Entrar
+          </NavLink>
+        </div>
       </div>
     </div>
   )

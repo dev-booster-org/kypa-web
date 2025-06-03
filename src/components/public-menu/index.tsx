@@ -21,7 +21,7 @@ export function PublicMenu() {
 
   return (
     <div className="flex items-center gap-2 p-1 border-b border-gray-200 w-full justify-end bg-blue-50 dark:bg-zinc-700 dark:border-zinc-600">
-      <div className="min-w-[1400px] mx-auto flex items-center justify-between gap-2">
+      <div className="w-full lg:max-w-[1400px] mx-auto flex items-center justify-between gap-2">
         <NavLink
           to="/"
           className="cursor-pointer hover:scale-105 transition-all"

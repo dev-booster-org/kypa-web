@@ -56,7 +56,7 @@ export function Home() {
         <NavLink to="/sign-up">
           <Button variant="outline">{t('home.buttons.signUp')}</Button>
         </NavLink>
-        <NavLink to="/sign-up">
+        <NavLink to="/sign-in">
           <Button>{t('home.buttons.signIn')}</Button>
         </NavLink>
       </section>
