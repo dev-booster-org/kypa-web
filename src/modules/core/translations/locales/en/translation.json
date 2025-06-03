@@ -24,5 +24,10 @@
         "description": "Military-grade encryption protects your passwords with the highest security standards."
       }
     }
+  },
+  "notFound": {
+    "title": "404",
+    "description": "Ops! The page you are looking for was not found.",
+    "button": "Go to home"
   }
 }

@@ -8,6 +8,7 @@ import kypaLightLogo from '@/assets/kypa_light_logo.svg'
 import { Button } from '@/components'
 import { Card } from '@/pages/home/components/card'
 import { useTheme } from '@/modules/core/providers/theme-provider'
+import { NavLink } from 'react-router'
 
 export function Home() {
   const { t } = useTranslation()
@@ -52,8 +53,12 @@ export function Home() {
         </div>
       </section>
       <section className="flex items-center gap-2">
-        <Button>{t('home.buttons.signIn')}</Button>
-        <Button variant="outline">{t('home.buttons.signUp')}</Button>
+        <NavLink to="/sign-up">
+          <Button variant="outline">{t('home.buttons.signUp')}</Button>
+        </NavLink>
+        <NavLink to="/sign-up">
+          <Button>{t('home.buttons.signIn')}</Button>
+        </NavLink>
       </section>
       <section className="flex items-center gap-2 max-w-[1400px] flex-wrap lg:flex-nowrap">
         {cards.map((card, index) => (
@@ -65,10 +70,15 @@ export function Home() {
         ))}
       </section>
       <footer className="flex items-center justify-center gap-2">
-        <span className="text-zinc-600">
+        <span className="text-zinc-500">
           Densenvolvido por{' '}
-          <a href="https://github.com/jhonesjhonatas">Jhones Jhonatas</a> e{' '}
-          <a href="https://github.com/bruno-oli">Bruno Oliveira</a>
+          <a href="https://github.com/jhonesjhonatas" className="text-blue-500">
+            Jhones Jhonatas
+          </a>{' '}
+          e{' '}
+          <a href="https://github.com/bruno-oli" className="text-blue-500">
+            Bruno Oliveira
+          </a>
         </span>
       </footer>
     </div>

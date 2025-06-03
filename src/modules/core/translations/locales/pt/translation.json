@@ -24,5 +24,10 @@
         "description": "Criptografia de nível militar protege suas senhas com os mais altos padrões de segurança."
       }
     }
+  },
+  "notFound": {
+    "title": "404",
+    "description": "Ops! A página que você está procurando não foi encontrada.",
+    "button": "Voltar para a página inicial"
   }
 }
