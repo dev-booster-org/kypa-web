@@ -29,5 +29,47 @@
     "title": "404",
     "description": "Ops! A página que você está procurando não foi encontrada.",
     "button": "Voltar para a página inicial"
+  },
+  "signIn": {
+    "title": "Bem Vindo de Volta!",
+    "description": "Faça login para continuar",
+    "form": {
+      "email": "Email",
+      "password": "Senha",
+      "keepSignedIn": "Manter conectado",
+      "forgotPassword": "Esqueceu sua senha?",
+      "submit": "Entrar"
+    },
+    "formErrors": {
+      "email": "Email inválido",
+      "password": "Mínimo de 8 caracteres"
+    },
+    "footer": {
+      "noAccount": "Não possui uma conta?",
+      "createAccount": "Criar conta"
+    }
+  },
+  "signUp": {
+    "title": "Criar Conta",
+    "description": "Se junte a nossa comunidade e comece a gerenciar suas senhas com segurança!",
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "password": "Senha",
+      "confirmPassword": "Confirmar Senha",
+      "terms": "Li e aceito os termos e condições",
+      "submit": "Criar Conta"
+    },
+    "formErrors": {
+      "name": "Nome é obrigatório",
+      "email": "Email inválido",
+      "password": "Mínimo de 8 caracteres",
+      "confirmPassword": "As senhas não coincidem",
+      "terms": "Obrigatório"
+    },
+    "footer": {
+      "hasAccount": "Já tem uma conta?",
+      "signIn": "Entrar"
+    }
   }
 }

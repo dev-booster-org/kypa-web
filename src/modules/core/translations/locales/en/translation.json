@@ -29,5 +29,47 @@
     "title": "404",
     "description": "Ops! The page you are looking for was not found.",
     "button": "Go to home"
+  },
+  "signIn": {
+    "title": "Welcome Back!",
+    "description": "Sign in to continue",
+    "form": {
+      "email": "Email",
+      "password": "Password",
+      "keepSignedIn": "Keep me signed in",
+      "forgotPassword": "Forgot your password?",
+      "submit": "Sign in"
+    },
+    "formErrors": {
+      "email": "Invalid email",
+      "password": "Minimum of 8 characters"
+    },
+    "footer": {
+      "noAccount": "Don't have an account?",
+      "createAccount": "Create account"
+    }
+  },
+  "signUp": {
+    "title": "Create Account",
+    "description": "Join our community and start managing your passwords securely!",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "terms": "I have read and accept the terms and conditions",
+      "submit": "Create Account"
+    },
+    "formErrors": {
+      "name": "Name is required",
+      "email": "Invalid email",
+      "password": "Minimum of 8 characters",
+      "confirmPassword": "Passwords do not match",
+      "terms": "Required"
+    },
+    "footer": {
+      "hasAccount": "Already have an account?",
+      "signIn": "Sign in"
+    }
   }
 }
