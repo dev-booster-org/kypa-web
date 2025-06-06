@@ -1,3 +1,5 @@
+export * from './auth-menu'
+export * from './avatar'
 export * from './button'
 export * from './dropdown'
 export * from './form'
