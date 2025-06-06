@@ -6,5 +6,5 @@ interface DropdownTriggerProps {
 }
 
 export function DropdownTrigger({ children }: DropdownTriggerProps) {
-  return <DropdownMenu.Trigger asChild>{children}</DropdownMenu.Trigger>
+  return <DropdownMenu.Trigger>{children}</DropdownMenu.Trigger>
 }

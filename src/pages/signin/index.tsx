@@ -1,5 +1,5 @@
 import { useCallback, useMemo } from 'react'
-import { NavLink } from 'react-router'
+import { NavLink, useNavigate } from 'react-router'
 import { z } from 'zod'
 import { useTranslation } from 'react-i18next'
 
@@ -9,6 +9,7 @@ import { Button, Form } from '@/components'
 
 export function SignIn() {
   const { t } = useTranslation()
+  const navigate = useNavigate()
 
   const formSchema = useMemo(() => {
     return z.object({
@@ -18,9 +19,13 @@ export function SignIn() {
     })
   }, [t])
 
-  const handleSubmit = useCallback((data: z.infer<typeof formSchema>) => {
-    console.log(data)
-  }, [])
+  const handleSubmit = useCallback(
+    (data: z.infer<typeof formSchema>) => {
+      console.log(data)
+      navigate('/auth/dashboard')
+    },
+    [navigate],
+  )
 
   return (
     <div className="flex flex-col h-screen w-full items-center p-4 lg:p-0">
