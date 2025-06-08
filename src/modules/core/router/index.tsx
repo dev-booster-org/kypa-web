@@ -3,7 +3,7 @@ import { createBrowserRouter } from 'react-router'
 import { PublicLayout } from './layouts/public-layout'
 import { AuthLayout } from './layouts/auth-layout'
 
-import { Home, NotFound, SignIn, SignUp, Dashboard } from '@pages'
+import { Home, NotFound, SignIn, SignUp, Dashboard, Settings } from '@pages'
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +31,10 @@ export const router = createBrowserRouter([
       {
         path: 'dashboard',
         element: <Dashboard />,
+      },
+      {
+        path: 'settings',
+        element: <Settings />,
       },
     ],
   },
