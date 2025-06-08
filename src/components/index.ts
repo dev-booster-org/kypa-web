@@ -1,6 +1,7 @@
 export * from './auth-menu'
 export * from './avatar'
 export * from './button'
+export * from './collapsable-box'
 export * from './dropdown'
 export * from './form'
 export * from './link'
